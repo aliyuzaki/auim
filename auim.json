@@ -1,0 +1,36 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Jasonbase",
+      "actions": {
+        "visit": [
+          {
+            "{{#if /\\/app/.test($jason.url)}}": {
+              "type": "$href",
+              "options": {
+                "url": "{{$jason.url.replace('/app', '')}}",
+                "preload": {
+                  "background": "#ffffff"
+                }
+              }
+            }
+          },
+          {
+            "{{#else}}": {
+              "type": "$default"
+            }
+          }
+        ]
+      }
+    },
+    "body": {
+      "background": {
+        "type": "html",
+        "url": "https://www.demo.auimsystem.com.ng",
+        "action": {
+          "trigger": "visit"
+        }
+      }
+    }
+  }
+}
